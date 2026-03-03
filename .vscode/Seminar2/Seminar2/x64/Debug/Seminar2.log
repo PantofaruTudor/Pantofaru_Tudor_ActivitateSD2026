@@ -1,0 +1,4 @@
+﻿  seminar2.c
+D:\Facultate\An2-sem2\structuri_de_date\Pantofaru_Tudor_ActivitateSD2026\.vscode\Seminar2\Seminar2\seminar2.c(16,34): warning C4013: 'strlen' undefined; assuming extern returning int
+D:\Facultate\An2-sem2\structuri_de_date\Pantofaru_Tudor_ActivitateSD2026\.vscode\Seminar2\Seminar2\seminar2.c(17,2): warning C4013: 'strcpy' undefined; assuming extern returning int
+  Seminar2.vcxproj -> D:\Facultate\An2-sem2\structuri_de_date\Pantofaru_Tudor_ActivitateSD2026\.vscode\Seminar2\x64\Debug\Seminar2.exe

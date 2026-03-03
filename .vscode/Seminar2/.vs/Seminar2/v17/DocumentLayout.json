@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Facultate\\An2-sem2\\structuri_de_date\\Pantofaru_Tudor_ActivitateSD2026\\.vscode\\Seminar2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D6C7741F-549E-4382-800B-E75609A4AB21}|Seminar2\\Seminar2.vcxproj|D:\\Facultate\\An2-sem2\\structuri_de_date\\Pantofaru_Tudor_ActivitateSD2026\\.vscode\\Seminar2\\Seminar2\\seminar2.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D6C7741F-549E-4382-800B-E75609A4AB21}|Seminar2\\Seminar2.vcxproj|solutionrelative:Seminar2\\seminar2.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "seminar2.c",
+              "DocumentMoniker": "D:\\Facultate\\An2-sem2\\structuri_de_date\\Pantofaru_Tudor_ActivitateSD2026\\.vscode\\Seminar2\\Seminar2\\seminar2.c",
+              "RelativeDocumentMoniker": "Seminar2\\seminar2.c",
+              "ToolTip": "D:\\Facultate\\An2-sem2\\structuri_de_date\\Pantofaru_Tudor_ActivitateSD2026\\.vscode\\Seminar2\\Seminar2\\seminar2.c",
+              "RelativeToolTip": "Seminar2\\seminar2.c",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAswGcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-03-03T18:58:41.166Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
