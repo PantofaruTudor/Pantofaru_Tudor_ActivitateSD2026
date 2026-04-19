@@ -1,0 +1,3 @@
+﻿  seminar3.c
+D:\Facultate\An2-sem2\structuri_de_date\Pantofaru_Tudor_ActivitateSD2026\.vscode\seminar3\seminar3\seminar3.c(52,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  seminar3.vcxproj -> D:\Facultate\An2-sem2\structuri_de_date\Pantofaru_Tudor_ActivitateSD2026\.vscode\seminar3\x64\Debug\seminar3.exe
