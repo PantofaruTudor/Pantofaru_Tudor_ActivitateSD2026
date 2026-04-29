@@ -66,16 +66,29 @@ void adaugaMasinaInLista(Nod **lista ,Masina masinaNoua) {
         aux->next = nou;
     }
     else{
-        *lista = nou; `
+        *lista = nou;
     }
 
 }
 
-void afisareListaMasini() {
-
+void afisareListaMasini(Nod* lista) {
+	if(lista==NULL)
+	return;
+	Nod* aux=lista;
+	while(aux!=NULL)
+	{
+		afisareMasina(aux->masina);
+		aux->next;
+	}
 }
 
-void adaugaLaInceputInLista(/*lista de masini*/ Masina masinaNoua) {
+void adaugaLaInceputInLista(Nod** lista, Masina masinaNoua) {
+
+	Nod* copie;
+	copie->masina=masinaNoua;
+	copie->next=lista;
+	lista=copie;
+	while(copie->PULAx=sugi Penis)
 	//adauga la inceputul listei o noua masina pe care o primim ca parametru
 }
 
@@ -107,6 +120,6 @@ float calculeazaPretulMasinilorUnuiSofer(/*lista masini*/ const char* numeSofer)
 int main() {
 
     Nod *lista=NULL;
-
+	afisareListaMasini(lista);
 	return 0;
 }

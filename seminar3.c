@@ -43,28 +43,81 @@ Masina citireMasinaFisier(FILE* file) {
 	//functia citeste o masina dintr-un strceam deja deschis
 	//masina citita este returnata;
 	char linie[50];
-	fgets(linie, 50, file);
+	if (!fgets(linie, 50, file)) {
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
 	char delim[3] = ",\n";
 	Masina masina;
-	masina.id = atoi(strtok(linie, delim));
-	masina.nrUsi = atoi(strtok(NULL, delim));
-	masina.pret = atof(strtok(NULL, delim));
+	char* p = strtok(linie, delim);
+	if (p == NULL) {
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
+	masina.id = atoi(p);
 
-	char* p = strtok(NULL, delim);
+	p = strtok(NULL, delim);
+	if (p == NULL) {
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
+	masina.nrUsi = atoi(p);
+
+	p = strtok(NULL, delim);
+	if (p == NULL) {
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
+	masina.pret = (float)atof(p);
+
+	p = strtok(NULL, delim);
+	if (p == NULL) {
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
 	masina.model = malloc(sizeof(char) * (strlen(p) + 1));
 	strcpy(masina.model, p);
 	
 	p = strtok(NULL, delim);
+	if (p == NULL) {
+		free(masina.model);
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
 	masina.numeSofer = malloc(sizeof(char) * (strlen(p) + 1));
 	strcpy(masina.numeSofer, p);
 
 	p = strtok(NULL, delim);
+	if (p == NULL) {
+		free(masina.model);
+		free(masina.numeSofer);
+		Masina invalid = { -1, 0, 0, NULL, NULL, 0 };
+		return invalid;
+	}
 	masina.serie = p[0];
 
 	return masina;
 }
 
 Masina* citireVectorMasiniFisier(const char* numeFisier, int* nrMasiniCitite) {
+	FILE* f = fopen(numeFisier, "r");
+	if (f == NULL || nrMasiniCitite == NULL) {
+		return NULL;
+	}
+
+	Masina* vector = NULL;
+	*nrMasiniCitite = 0;
+
+	while (1) {
+		Masina aux = citireMasinaFisier(f);
+		if (aux.id == -1) {
+			break;
+		}
+		adaugaMasinaInVector(&vector, nrMasiniCitite, aux);
+	}
+
+	fclose(f);
+	return vector;
 	//functia primeste numele fisierului, il deschide si citeste toate masinile din fisier
 	//prin apelul repetat al functiei citireMasinaFisier()
 	//numarul de masini este determinat prin numarul de citiri din fisier
@@ -72,13 +125,27 @@ Masina* citireVectorMasiniFisier(const char* numeFisier, int* nrMasiniCitite) {
 }
 
 void dezalocareVectorMasini(Masina** vector, int* nrMasini) {
-	//este dezalocat intreg vectorul de masini
+	if(*vector==NULL || nrMasini== NULL || vector==NULL)
+	return;
+	for(int i=0;i<*nrMasini;i++)
+	{
+		free((*vector)[i].model);
+		free((*vector)[i].numeSofer);
+		
+	}
+free(*vector);
+*vector=NULL;
+*nrMasini=0;
+
 }
 
 int main() {
-	Masina masina1;
-	FILE* file = fopen("masini.txt", "r");
-	masina1 = citireMasinaFisier(file);
-	afisareMasina(masina1);
+	int nr = 0;
+	Masina* vector = citireVectorMasiniFisier("masina.txt", &nr);
+	if (vector != NULL) {
+		afisareVectorMasini(vector, nr);
+		dezalocareVectorMasini(&vector, &nr);
+	}
+	afisareVectorMasini(vector, nr);
 	return 0;
 }
