@@ -195,5 +195,8 @@ int main() {
 
     NodArbore* root = citireArboreDeMasiniDinFisier("masini.txt");
     afisareMasiniDinArbore(root);
+
+
+    
 	return 0;
 }
